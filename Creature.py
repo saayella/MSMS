@@ -1,4 +1,4 @@
-from Sanctuary import *
+
 class Creature():
     number_of_creatures = 0
 
@@ -11,6 +11,15 @@ class Creature():
         self.age = age
         Creature.number_of_creatures += 1
 
+    def decide_action(self):
+        # simple priority-based decision
+        if self.energy < 30:
+            return self.rest()
+        elif self.happiness < 50:
+            return self.play()
+        else:
+            return self.speak()
+        
     def feed(self, food):
         food_value = food_dictionary.get(food, 0)
         self.hunger = max(self.hunger - food_value, 0)
