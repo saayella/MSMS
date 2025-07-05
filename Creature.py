@@ -1,3 +1,4 @@
+from Sanctuary import *
 class Creature():
     number_of_creatures = 0
 
@@ -38,6 +39,11 @@ class Dragon(Creature):
 class Unicorn(Creature):
     def rainbow(self):
         return f"{self.name} creates a rainbow!"
+    def feed(self, food):
+        if food == "meat":
+            return f"{self.name} the Unicorn refuses to eat meat. 🦄"
+        else:
+            return super().feed(food)
 
 class Phoenix(Creature):
     def rise_from_ashes(self):
@@ -66,16 +72,25 @@ class Hydra(Creature):
 food_dictionary = {
     "meat": 30, "fish": 20, "vegetables": 10, "fruits": 5, "grains": 2
 }
-
+'''
+Wilson_Sanctuary = Sanctuary("Wilson_Sanctuary", "A place for mythical creatures to thrive and play.")
 Rob = Dragon("Rob", 5)
+Wilson_Sanctuary.add_creature(Rob)
 Fiona = Unicorn("Fiona", 3)
 Charlie = Phoenix("Charlie", 2)
 Gryphon = Griffin("Gryphon", 4)
+Wilson_Sanctuary.add_creature(Fiona)
+Wilson_Sanctuary.add_creature(Charlie)
 Merlin = Mermaid("Merlin", 6)
+
 print(Fiona.__str__())
+Wilson_Sanctuary.rest_all()
 print(Rob.play(2))
 print(Charlie.rise_from_ashes())
 print(Charlie.__str__())
 print(Fiona.feed("fruits"))
 print(Rob.breathe_fire())
 print(Fiona.__str__())
+Wilson_Sanctuary.show_status()
+
+'''
